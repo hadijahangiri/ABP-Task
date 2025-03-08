@@ -17,6 +17,8 @@ using MyCompanyName.AbpZeroTemplate.Friendships;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.Accounting;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.Payments;
+using MyCompanyName.AbpZeroTemplate.Shop.Categories;
+using MyCompanyName.AbpZeroTemplate.Shop.Products;
 using MyCompanyName.AbpZeroTemplate.Storage;
 
 namespace MyCompanyName.AbpZeroTemplate.EntityFrameworkCore
@@ -50,6 +52,9 @@ namespace MyCompanyName.AbpZeroTemplate.EntityFrameworkCore
         public virtual DbSet<UserDelegation> UserDelegations { get; set; }
 
         public virtual DbSet<RecentPassword> RecentPasswords { get; set; }
+
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         public AbpZeroTemplateDbContext(DbContextOptions<AbpZeroTemplateDbContext> options)
             : base(options)
@@ -125,7 +130,11 @@ namespace MyCompanyName.AbpZeroTemplate.EntityFrameworkCore
                 b.HasIndex(e => new { e.TenantId, e.SourceUserId });
                 b.HasIndex(e => new { e.TenantId, e.TargetUserId });
             });
-            
+
+            modelBuilder.Entity<Category>(b =>
+            {
+                b.HasIndex(e => new { e.Name });
+            });
             modelBuilder.ConfigureOpenIddict();
         }
     }

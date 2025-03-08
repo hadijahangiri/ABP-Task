@@ -106,5 +106,17 @@
         public const string Pages_Administration_Host_Maintenance = "Pages.Administration.Host.Maintenance";
         public const string Pages_Administration_Host_Settings = "Pages.Administration.Host.Settings";
         public const string Pages_Administration_Host_Dashboard = "Pages.Administration.Host.Dashboard";
+
+        public const string Pages_Shop = "Pages.Shop";
+
+        public const string Pages_Shop_Categories = "Pages.Shop.Categories";
+        public const string Pages_Shop_Categories_Create = "Pages.Shop.Categories.Create";
+        //public const string Pages_Categories_Edit = "Pages.Tenants.Edit";
+        //public const string Pages_Categories_ChangeFeatures = "Pages.Tenants.ChangeFeatures";
+        //public const string Pages_Categories_Delete = "Pages.Tenants.Delete";
+        //public const string Pages_Categories_Impersonation = "Pages.Tenants.Impersonation";
+
+        public const string Pages_Shop_Products = "Pages.Shop.Products";
+        public const string Pages_Shop_Products_Create = "Pages.Shop.Products.Create";
     }
 }

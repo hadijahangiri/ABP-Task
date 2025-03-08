@@ -125,6 +125,13 @@ namespace MyCompanyName.AbpZeroTemplate.Authorization
             
             administration.CreateChildPermission(AppPermissions.Pages_Administration_HangfireDashboard, L("HangfireDashboard"), multiTenancySides: _isMultiTenancyEnabled ? MultiTenancySides.Host : MultiTenancySides.Tenant);
             administration.CreateChildPermission(AppPermissions.Pages_Administration_Host_Dashboard, L("Dashboard"), multiTenancySides: MultiTenancySides.Host);
+
+            var shop = pages.CreateChildPermission(AppPermissions.Pages_Shop, L("Shop"));
+            shop.CreateChildPermission(AppPermissions.Pages_Shop_Categories, L("Categories"));
+            shop.CreateChildPermission(AppPermissions.Pages_Shop_Categories_Create, L("CreatingNewCategory"));
+
+            shop.CreateChildPermission(AppPermissions.Pages_Shop_Products, L("Products"));
+            shop.CreateChildPermission(AppPermissions.Pages_Shop_Products_Create, L("CreatingNewProduct"));
         }
 
         private static ILocalizableString L(string name)

@@ -43,6 +43,23 @@ namespace MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Startup
                         permissionDependency: new SimplePermissionDependency(AppPermissions.Pages_Tenant_Dashboard)
                     )
                 ).AddItem(new MenuItemDefinition(
+                        AppAreaNamePageNames.Shop.Default,
+                        L("Shop"),
+                        icon: "flaticon-line-graph"
+                        ).AddItem(new MenuItemDefinition(
+                                AppAreaNamePageNames.Shop.Categories,
+                                L("Categories"),
+                                url: "AppAreaName/Categories",
+                                icon: "flaticon-mail-1"
+                            )
+                        ).AddItem(new MenuItemDefinition(
+                            AppAreaNamePageNames.Shop.Products,
+                            L("Products"),
+                            url: "AppAreaName/Products",
+                            icon: "flaticon-mail-1"
+                        )
+                    )
+                    ).AddItem(new MenuItemDefinition(
                         AppAreaNamePageNames.Common.Administration,
                         L("Administration"),
                         icon: "flaticon-interface-8"

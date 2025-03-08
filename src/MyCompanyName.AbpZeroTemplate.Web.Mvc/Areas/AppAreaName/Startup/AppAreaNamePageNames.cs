@@ -35,5 +35,12 @@
             public const string Settings = "Administration.Settings.Tenant";
             public const string SubscriptionManagement = "Administration.SubscriptionManagement.Tenant";
         }
+
+        public static class Shop
+        {
+            public const string Default = "Shop";
+            public const string Categories = "Shop.Categories";
+            public const string Products = "Shop.Products";
+        }
     }
 }

@@ -1313,5 +1313,10 @@
     <text name="RestrictedEmailDomain_NullError">When email domain restriction is active, the email domain field cannot be empty. Please enter a valid domain address (e.g., "yourdomain.com").</text>
     <text name="RestrictedEmailDomain_InvalidError">For email restrictions, only the domain part should be entered; full email addresses are not accepted. (e.g., "yourdomain.com")</text>
     <text name="RestrictedEmailDomain_InputError">Invalid email domain.</text>
+    <!--SHOP-->
+    <text name="Shop">Shop</text>
+    <text name="Categories">Categories</text>
+    <text name="CategoriesHeaderInfo">List of categories</text>
+    
   </texts>
 </localizationDictionary>

@@ -32,7 +32,7 @@
         "wwwroot/Common/Scripts/passwordComplexityHelper.js",
         "wwwroot/Common/Scripts/ResourceLoader.js",
         "wwwroot/Common/Scripts/utils.js",
-        "wwwroot/Common/Scripts/main-customize.js"        
+        "wwwroot/Common/Scripts/main-customize.js"
       ]
     },
     {
@@ -326,6 +326,20 @@
         "wwwroot/view-resources/Areas/AppAreaName/Views/Tenants/_EditModal.js",
         "wwwroot/view-resources/Areas/AppAreaName/Views/Tenants/_FeaturesModal.js",
         "wwwroot/view-resources/Areas/AppAreaName/Views/Tenants/Index.js"
+      ]
+    },
+    {
+      "output": "view-resources/Areas/AppAreaName/Views/_Bundles/category-index-libs.min.js",
+      "input": [
+        "wwwroot/view-resources/Areas/AppAreaName/Views/Shop/Categories/Index.js",
+        "wwwroot/view-resources/Areas/AppAreaName/Views/Shop/Categories/_CreateModal.js"
+      ]
+    },
+    {
+      "output": "view-resources/Areas/AppAreaName/Views/_Bundles/product-index-libs.min.js",
+      "input": [
+        "wwwroot/view-resources/Areas/AppAreaName/Views/Shop/Products/Index.js",
+        "wwwroot/view-resources/Areas/AppAreaName/Views/Shop/Products/_CreateModal.js"
       ]
     },
     {

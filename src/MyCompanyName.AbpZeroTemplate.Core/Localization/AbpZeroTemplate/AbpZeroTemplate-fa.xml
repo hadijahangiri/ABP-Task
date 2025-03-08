@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="fa">
-    <texts>
+  <texts>
     <text name="HomePage">صفحه اصلی</text>
     <text name="AboutUs">درباه ما</text>
     <text name="Administration">مدیریت پنل</text>
@@ -174,11 +174,11 @@
     <text name="WeCanNotFindThePage">ما نمی توانیم صفحه ی مورد نظر شما را پیدا کنیم</text>
     <text name="DashboardDemo_Note_Title">به پروژه AbpZeroTemplate خوش آمدید!</text>
     <text name="DashboardDemo_Note_Info">
-        در این نسخه ی نمایشی، می توانید از منوی سمت چپ برای تست برنامه استفاده کنید.
-        این صفحه داشبورد فقط برای تظاهرات است، اما تمام صفحات و قابلیت های دیگر به طور کامل اجرا، کار و آماده برای تولید است.
-        شما می توانید الزامات کسب و کار خود را در این پروژه راه اندازی اضافه کنید (یا هر کارایی که نیازی به آن ندارید را حذف کنید).
-        بنابراین، می توانید یک زمان معنی دار برای ایجاد فورا نیازهای پروژه خود را داشته باشید.
-  </text>
+      در این نسخه ی نمایشی، می توانید از منوی سمت چپ برای تست برنامه استفاده کنید.
+      این صفحه داشبورد فقط برای تظاهرات است، اما تمام صفحات و قابلیت های دیگر به طور کامل اجرا، کار و آماده برای تولید است.
+      شما می توانید الزامات کسب و کار خود را در این پروژه راه اندازی اضافه کنید (یا هر کارایی که نیازی به آن ندارید را حذف کنید).
+      بنابراین، می توانید یک زمان معنی دار برای ایجاد فورا نیازهای پروژه خود را داشته باشید.
+    </text>
     <text name="WelcomePage_Title">خوش آمدید!</text>
     <text name="WelcomePage_Info">به پرتال داخلی شرکت خوش آمدید، برای شروع کار از منو سامانه می توانید استفاده کنید. اگرهیچ آیتمی در منو را مشاهده نمی کنید، احتمالا شما مجوزه دیدن هر صفحه ای ندارید، در اینصورت از مدیریت سیستم درخواست مجوز کنید.</text>
     <text name="RequestedFileDoesNotExists">فایل درخواست شده وجود ندارد!</text>
@@ -226,15 +226,15 @@
     <text name="Apply">درخواست دادن</text>
     <text name="CustomRange">محدوده سفارشی</text>
     <text name="DashboardNoteForMpaVersion">
-        <![CDATA[
+      <![CDATA[
       نسخه آزمایشی نسخه چند صفحه ای با <strong>ASP.NET MVC</strong> و <strong>jQuery</strong>.
       ]]>
-  </text>
+    </text>
     <text name="DashboardNoteForSpaVersion">
-        <![CDATA[
+      <![CDATA[
       توجه: همچنین یک نسخه  <strong>یک صفحه</strong> با استفاده از ASP.NET MVC و <strong>AngularJs</strong>.
       ]]>
-  </text>
+    </text>
     <text name="SeeDemo">نسخه ی نمایشی را ببینید</text>
     <text name="Edition">نسخه</text>
     <text name="Editions">نسخه ها</text>
@@ -413,7 +413,7 @@
     <text name="YouDontHaveAnyFriend">شما دوست ندارید یک نام کاربری را در کادر بالا وارد کنید و دکمه «افزودن دوست» را کلیک کنید.</text>
     <text name="YouDontHaveAnyBlockedFriend">شما هیچ کاربر مسدود ندارید برای جلوگیری از یک دوست، یک دوست را انتخاب کنید و بلوک را از منوی کشویی انتخاب کنید.</text>
     <text name="ChatUserSearch_Hint">
-        <![CDATA[  
+      <![CDATA[  
        فقط نام کاربری را برای کاربران همان شرکت بنویسید،  <br>
       <strong>[نام کاربری]\[نام شرکت]</strong> برای کاربران دیگر شرکت <br><br>
       به عنوان مثال: <br>
@@ -421,7 +421,7 @@
       Test\admin -> برای تست شرکت Test <br>
       admin -> برای مدیر شرکت شما
       ]]>
-  </text>
+    </text>
     <text name="AddFriend">اضافه کردن دوست</text>
     <text name="AddFriendFromDifferentTenant">افزودن دوست از شرکت مختلف</text>
     <text name="IsHostUser">آیا کاربر میزبان است</text>
@@ -693,9 +693,9 @@
     <text name="Remove">برچیدن</text>
     <text name="OrganizationUnitNotFoundForThisUser">هیچ سازمانی برای این کاربر وجود ندارد.</text>
     <text name="DemoUiComponents_Info">
-        این صفحه تعدادی از مفاهیم UI مفید را نشان می دهد که می توانند در برنامه شما استفاده شوند.
-        اجزاء در این صفحه به صورت پشته کامل (شامل طرف سرور) اجرا می شوند.
-  </text>
+      این صفحه تعدادی از مفاهیم UI مفید را نشان می دهد که می توانند در برنامه شما استفاده شوند.
+      اجزاء در این صفحه به صورت پشته کامل (شامل طرف سرور) اجرا می شوند.
+    </text>
     <text name="DemoUiComponents_Info_Metronic_Link_Text">تم Metronic را برای اجزای رابط کاربر بیشتر بررسی کنید</text>
     <text name="Image">تصویر</text>
     <text name="File">فایل</text>
@@ -1313,5 +1313,9 @@
     <text name="RestrictedEmailDomain_NullError">وقتی محدودیت دامنه ایمیل فعال است، فیلد دامنه ایمیل نمی‌تواند خالی باشد. لطفاً یک آدرس دامنه معتبر وارد کنید (مثلاً "yourdomain.com").</text>
     <text name="RestrictedEmailDomain_InvalidError">برای محدودیت ایمیل، فقط قسمت دامنه باید وارد شود؛ آدرس‌های کامل ایمیل پذیرفته نمی‌شوند. (مثلاً "yourdomain.com")</text>
     <text name="RestrictedEmailDomain_InputError">دامنه ایمیل نامعتبر است.</text>
-    </texts>
+    <!--SHOP-->
+    <text name="Shop">فروشگاه</text>
+    <text name="Categories">دسته بندی محصولات</text>
+    <text name="CategoriesHeaderInfo">لیست دسته بندی محصولات</text>
+  </texts>
 </localizationDictionary>
