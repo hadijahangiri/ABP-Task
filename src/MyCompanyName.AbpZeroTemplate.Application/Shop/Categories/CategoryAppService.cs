@@ -20,9 +20,9 @@ namespace MyCompanyName.AbpZeroTemplate.Shop.Categories
     [AbpAuthorize(AppPermissions.Pages_Shop_Categories)]
     public class CategoryAppService : AbpZeroTemplateAppServiceBase, ICategoryAppService
     {
-        private readonly IRepository<Category, int> _repository;
+        private readonly IRepository<Category, Guid> _repository;
 
-        public CategoryAppService(IRepository<Category, int> repository)
+        public CategoryAppService(IRepository<Category, Guid> repository)
         {
             _repository = repository;
         }

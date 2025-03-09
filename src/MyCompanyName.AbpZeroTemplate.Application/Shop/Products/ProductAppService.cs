@@ -19,9 +19,9 @@ namespace MyCompanyName.AbpZeroTemplate.Shop.Products
     [AbpAuthorize(AppPermissions.Pages_Shop_Categories)]
     public class ProductAppService : AbpZeroTemplateAppServiceBase, IProductAppService
     {
-        private readonly IRepository<Product, int> _repository;
+        private readonly IRepository<Product, Guid> _repository;
 
-        public ProductAppService(IRepository<Product, int> repository)
+        public ProductAppService(IRepository<Product, Guid> repository)
         {
             _repository = repository;
         }

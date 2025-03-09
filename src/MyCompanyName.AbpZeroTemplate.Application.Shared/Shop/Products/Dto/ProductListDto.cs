@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyCompanyName.AbpZeroTemplate.Shop.Products.Dto
 {
-    public class ProductListDto : EntityDto, IHasCreationTime
+    public class ProductListDto : EntityDto<Guid>, IHasCreationTime
     {
         public string Name { get; set; }
         public decimal Price { get; set; }

@@ -6,19 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using Abp.Domain.Values;
 using Abp.Domain.Entities;
+using MyCompanyName.AbpZeroTemplate.Shop.Categories;
 
 namespace MyCompanyName.AbpZeroTemplate.Shop.Products
 {
-    public class Product : FullAuditedEntity
+    public class Product : FullAuditedEntity<Guid>
     {
-        public int CategoryId { get; private set; }
         public string Name { get; private set; }
         //TODO: use money for price
         public decimal Price { get; private set; }
         //TODO: discount manager
         public decimal? Discount { get; private set; }
 
-        public Product(int categoryId, string name, decimal price)
+        public Guid CategoryId { get; private set; }
+        public virtual Category Category { get; set; }
+
+        public Product(Guid categoryId, string name, decimal price)
         {
             CategoryId = categoryId;
             Name = name;

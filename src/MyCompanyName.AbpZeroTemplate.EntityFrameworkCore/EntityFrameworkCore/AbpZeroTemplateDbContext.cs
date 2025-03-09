@@ -14,10 +14,12 @@ using MyCompanyName.AbpZeroTemplate.Chat;
 using MyCompanyName.AbpZeroTemplate.Editions;
 using MyCompanyName.AbpZeroTemplate.ExtraProperties;
 using MyCompanyName.AbpZeroTemplate.Friendships;
+using MyCompanyName.AbpZeroTemplate.InboxPattern;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.Accounting;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.Payments;
 using MyCompanyName.AbpZeroTemplate.Shop.Categories;
+using MyCompanyName.AbpZeroTemplate.Shop.Orders;
 using MyCompanyName.AbpZeroTemplate.Shop.Products;
 using MyCompanyName.AbpZeroTemplate.Storage;
 
@@ -55,6 +57,8 @@ namespace MyCompanyName.AbpZeroTemplate.EntityFrameworkCore
 
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<InboxMessage> InboxMessages { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
 
         public AbpZeroTemplateDbContext(DbContextOptions<AbpZeroTemplateDbContext> options)
             : base(options)
@@ -132,6 +136,11 @@ namespace MyCompanyName.AbpZeroTemplate.EntityFrameworkCore
             });
 
             modelBuilder.Entity<Category>(b =>
+            {
+                b.HasIndex(e => new { e.Name });
+            });
+
+            modelBuilder.Entity<Product>(b =>
             {
                 b.HasIndex(e => new { e.Name });
             });

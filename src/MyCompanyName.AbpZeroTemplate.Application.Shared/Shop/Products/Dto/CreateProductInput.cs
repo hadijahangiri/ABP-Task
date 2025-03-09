@@ -1,11 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyCompanyName.AbpZeroTemplate.Shop.Products.Dto;
 
 public class CreateProductInput
 {
     [Required]
-    public int CategoryId { get; set; }
+    public Guid CategoryId { get; set; }
 
     [Required]
     [StringLength(ProductConsts.MaxNameLength)]

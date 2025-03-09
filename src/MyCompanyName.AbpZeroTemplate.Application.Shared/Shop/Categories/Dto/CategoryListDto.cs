@@ -13,7 +13,7 @@ using Abp.MultiTenancy;
 
 namespace MyCompanyName.AbpZeroTemplate.Shop.Categories.Dto
 {
-    public class CategoryListDto : EntityDto, IHasCreationTime
+    public class CategoryListDto : EntityDto<Guid>, IHasCreationTime
     {
         public string Name { get; set; }
         public DateTime CreationTime { get; set; }
