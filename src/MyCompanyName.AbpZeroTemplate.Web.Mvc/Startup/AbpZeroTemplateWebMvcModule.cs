@@ -1,9 +1,12 @@
-﻿using Abp.AspNetZeroCore;
+﻿using System;
+using Abp.AspNetZeroCore;
 using Abp.Configuration.Startup;
 using Abp.Dependency;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Threading.BackgroundWorkers;
+using Castle.MicroKernel.Registration;
+using MassTransit;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using MyCompanyName.AbpZeroTemplate.Auditing;
@@ -12,7 +15,9 @@ using MyCompanyName.AbpZeroTemplate.Configuration;
 using MyCompanyName.AbpZeroTemplate.EntityFrameworkCore;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.Subscription;
+using MyCompanyName.AbpZeroTemplate.Shop.Orders;
 using MyCompanyName.AbpZeroTemplate.Web.Areas.AppAreaName.Startup;
+using MyCompanyName.AbpZeroTemplate.Web.Consumers;
 
 namespace MyCompanyName.AbpZeroTemplate.Web.Startup
 {
@@ -69,6 +74,31 @@ namespace MyCompanyName.AbpZeroTemplate.Web.Startup
             }
 
             workManager.Add(IocManager.Resolve<PasswordExpirationBackgroundWorker>());
+
+            IocManager.IocContainer.Register(Component.For<OrderConsumer>().LifestyleTransient());
+
+            var busControl = Bus.Factory.CreateUsingRabbitMq(config =>
+            {
+                config.Host("localhost", "/", h =>
+                {
+                    h.Username("guest");
+                    h.Password("guest");
+                });
+
+                config.ReceiveEndpoint(queueName: "new-orders", endpoint =>
+                {
+                    endpoint.Handler<OrderCreatedEventData>(async context =>
+                    {
+                        using var consumer = IocManager.ResolveAsDisposable<OrderConsumer>(typeof(OrderConsumer));
+                        await consumer.Object.Consume(context);
+                    });
+                });
+
+            });
+
+            IocManager.IocContainer.Register(Component.For<IBus, IBusControl>().Instance(busControl));
+
+            busControl.Start();
         }
     }
 }

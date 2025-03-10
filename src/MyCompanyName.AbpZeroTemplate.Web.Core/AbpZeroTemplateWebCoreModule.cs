@@ -43,7 +43,9 @@ using MyCompanyName.AbpZeroTemplate.Web.DashboardCustomization;
 using Abp.Extensions;
 using Abp.HtmlSanitizer;
 using Abp.HtmlSanitizer.Configuration;
+using Castle.MicroKernel.Registration;
 using MyCompanyName.AbpZeroTemplate.Authorization.Accounts;
+using MyCompanyName.AbpZeroTemplate.Shop.Orders;
 
 namespace MyCompanyName.AbpZeroTemplate.Web
 {
@@ -141,6 +143,10 @@ namespace MyCompanyName.AbpZeroTemplate.Web
 
         public override void PostInitialize()
         {
+            //Configuration.DefaultNameOrConnectionString = _appConfiguration.GetConnectionString(
+            //    MassTransitSampleConsts.ConnectionStringName
+            //);
+
             SetAppFolders();
 
             IocManager.Resolve<ApplicationPartManager>()

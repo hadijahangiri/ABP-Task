@@ -28,9 +28,9 @@ namespace MyCompanyName.AbpZeroTemplate.Shop.Orders
 
         public void HandleEvent(OrderCreatedEventData eventData)
         {
-            var payload = JsonSerializer.Serialize(eventData);
-            var inboxMessage = new InboxMessage("", payload);
-            _inboxRepository.Insert(inboxMessage);
+            //var payload = JsonSerializer.Serialize(eventData);
+            //var inboxMessage = new InboxMessage(Guid.NewGuid(), "", payload);
+            //_inboxRepository.Insert(inboxMessage);
             //save to inbox
             //using var uow = _unitOfWorkManager.Begin(TransactionScopeOption.RequiresNew);
             //var order = _repository.FirstOrDefault(eventData.Id);

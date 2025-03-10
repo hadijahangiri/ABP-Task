@@ -11,6 +11,7 @@ using Abp.Domain.Repositories;
 using Abp.Events.Bus;
 using Abp.Localization;
 using Abp.UI;
+using MassTransit;
 using MyCompanyName.AbpZeroTemplate.Shop.Orders.Dto;
 
 namespace MyCompanyName.AbpZeroTemplate.Shop.Orders
@@ -21,15 +22,14 @@ namespace MyCompanyName.AbpZeroTemplate.Shop.Orders
         private readonly IRepository<Order, Guid> _repository;
         private readonly IRepository<Product, Guid> _productRepository;
         private readonly IGuidGenerator _guidGenerator;
-        public IEventBus EventBus { get; set; }
+        private readonly IBus _bus;
 
-        public OrderAppService(IRepository<Order, Guid> repository, IRepository<Product, Guid> productRepository, IGuidGenerator guidGenerator)
+        public OrderAppService(IRepository<Order, Guid> repository, IRepository<Product, Guid> productRepository, IGuidGenerator guidGenerator, IBus bus)
         {
             _repository = repository;
             _productRepository = productRepository;
             _guidGenerator = guidGenerator;
-
-            EventBus = NullEventBus.Instance;
+            _bus = bus;
         }
 
         public async Task CreateOrder(CreateOrderInput input)
@@ -48,17 +48,17 @@ namespace MyCompanyName.AbpZeroTemplate.Shop.Orders
 
             await _repository.InsertAsync(order);
 
-            await EventBus.TriggerAsync(new OrderCreatedEventData
+            await _bus.Publish(new OrderCreatedEventData
             {
                 Id = orderId,
                 Items = order.Items
-                     .Select(x => new OrderCreatedEventData.OrderItemAdded
-                     {
-                         ProductId = x.ProductId,
-                         Quantity = x.Quantity,
-                         UnitPrice = x.UnitPrice,
-                         Discount = x.Discount
-                     }).ToList()
+                    .Select(x => new OrderCreatedEventData.OrderItemAdded
+                    {
+                        ProductId = x.ProductId,
+                        Quantity = x.Quantity,
+                        UnitPrice = x.UnitPrice,
+                        Discount = x.Discount
+                    }).ToList()
             });
 
         }
