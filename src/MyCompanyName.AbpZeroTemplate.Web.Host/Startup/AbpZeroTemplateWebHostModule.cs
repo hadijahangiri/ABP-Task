@@ -22,6 +22,7 @@ using MyCompanyName.AbpZeroTemplate.Configuration;
 using MyCompanyName.AbpZeroTemplate.EntityFrameworkCore;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy;
 using MyCompanyName.AbpZeroTemplate.MultiTenancy.Subscription;
+using MyCompanyName.AbpZeroTemplate.Shop.Orders;
 using MyCompanyName.AbpZeroTemplate.Web.Startup.ExternalLoginInfoProviders;
 
 namespace MyCompanyName.AbpZeroTemplate.Web.Startup
@@ -78,6 +79,7 @@ namespace MyCompanyName.AbpZeroTemplate.Web.Startup
             }
 
             workManager.Add(IocManager.Resolve<PasswordExpirationBackgroundWorker>());
+            workManager.Add(IocManager.Resolve<OrderBackgroundWorker>());
             
             ConfigureExternalAuthProviders();
         }
